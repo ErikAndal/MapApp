@@ -1,0 +1,170 @@
+.startpage-container {
+  /* border: 1px solid rgb(255, 0, 251); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 90vh;
+  width: 50vw;
+}
+
+.radio-container {
+  /* border: 1px solid green; */
+  position: relative;
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+}
+
+.radio-label {
+  /* border: 1px solid blue; */
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.new-radio-label {
+  position: relative;
+  height: 100%;
+  top: calc(50% - 6vh);
+  left: calc(50% - 6vh);
+  display: inline-block;
+}
+
+input[type="radio"]:checked + .new-radio-label {
+  position: relative;
+  box-shadow: 1px 0px 20px 10px rgba(242, 255, 0, 0.561),
+    1px 0px 40px 10px rgb(0, 145, 255), 1px 0px 40px 10px rgb(0, 145, 255);
+  border-radius: 100%;
+  height: 12vh;
+}
+
+.gamemode-image {
+  position: relative;
+  height: 12vh;
+}
+
+input[type="radio"] {
+  opacity: 0;
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+@keyframes circle {
+  0% {
+    transform: rotate(0deg) translateX(120%) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(120%) rotate(-360deg);
+  }
+}
+
+.radio-label:nth-child(1) .new-radio-label {
+  animation: circle 5s linear infinite;
+  z-index: 4;
+}
+
+.radio-label:nth-child(2) .new-radio-label {
+  animation: circle 5s linear infinite;
+  animation-delay: 1.25s;
+  z-index: 3;
+}
+
+.radio-label:nth-child(3) .new-radio-label {
+  animation: circle 5s linear infinite;
+  animation-delay: 2.5s;
+  z-index: 2;
+}
+
+.radio-label:nth-child(4) .new-radio-label {
+  animation: circle 5s linear infinite;
+  animation-delay: 3.75s;
+  z-index: 1;
+}
+
+button {
+  cursor: pointer;
+  z-index: 5;
+}
+
+.username-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 5;
+}
+
+.username-label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.username-and-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.time {
+  margin-left: 15%;
+}
+
+.highscore-list {
+  min-width: 200px;
+  width: 50%;
+  text-wrap: nowrap;
+  text-align: start;
+}
+p {
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+.score-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.score {
+  width: fit-content;
+  position: fixed;
+  margin-left: 7%;
+}
+
+.info {
+  margin: 0;
+  padding: 0;
+  margin-left: 50%;
+  transform: translate(-50%);
+  /* border: solid blue 1px; */
+  flex-direction: column;
+  display: flex;
+  position: fixed;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.next-question,
+.tip {
+  margin: 0;
+  padding: 0;
+  position: relative;
+
+  /* border: 1px solid white; */
+}
+
+.map {
+  margin-top: 10%;
+  width: 100vw;
+  height: 100%;
+  overflow: visible;
+  /* border: 1px solid green; */
+}
+
+.map-container {
+  border: 1px solid gray;
+  width: 100vw;
+  height: 100vh;
+}
