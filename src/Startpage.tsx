@@ -70,7 +70,7 @@ const Startpage: React.FC<MyComponentProps> = memo(
                   <img
                     className="gamemode-image"
                     key={index}
-                    src={`./src/assets/gamemode-images/${option.value}.webp`}
+                    src={`./public/assets/gamemode-images/${option.value}.webp`}
                     alt={option.value}
                   />
                 </span>
