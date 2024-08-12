@@ -30,7 +30,6 @@ function App() {
   const [wrongCount, setWrongCount] = useState(0);
 
   useEffect(() => {
-    console.log("Effect runs for nextState or gameMode:", nextState, gameMode);
     if (nextState !== null && gameMode) {
       const key = nextState.replace(/\s/g, "");
       const nextQuestion =
@@ -41,7 +40,6 @@ function App() {
   }, [nextState, gameMode]);
 
   useEffect(() => {
-    //console.log("Effect runs for highscoreList:", highscoreList);
     localStorage.setItem(
       "highscoreList_storage",
       JSON.stringify(highscoreList)
@@ -63,13 +61,10 @@ function App() {
 
   useEffect(() => {
     if (running) {
-      //console.log("Effect runs for time:", time);
       const timer = setInterval(() => {
-        //console.log("Timeout fired for time:", time);
         setTime((prev) => prev + 1);
       }, 1000);
       return () => {
-        //console.log("Clearing timeout for time:", time);
         clearInterval(timer);
       };
     }
@@ -100,13 +95,11 @@ function App() {
     } else {
       setWrongCount((prev) => prev + 1);
       playTone(false);
-      console.log("wrong state clicked");
       setScore((prev) => prev - 1);
     }
   };
 
   const saveAndReinitGame = (username: string, score: number) => {
-    //console.log("Saving and reinitializing game");
     const combinedScore = score - time;
     const updatedHighscores = [
       ...highscoreList,
